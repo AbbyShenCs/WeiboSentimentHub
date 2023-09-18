@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- html &#39 to '-->
+{% autoescape false %}
+
+<script src="../static/echarts/echarts.min.js"></script>
+<!--https://github.com/ecomfe/echarts-wordcloud-->
+
+<div style="margin-top:66px"></div>
+
+
+<!--启动爬虫板块和微博热搜最新数据列表-->
+<div class="jumbotron">
+    <h2>微博热搜最新数据列表</h2>
+    <p>
+        <a id="startSpiders" class="btn btn-primary btn-large"> 启动爬虫 &raquo;</a>
+    </p>
+
+
+    <!--微博热搜最新数据列表-->
+    <ul class="list-group">
+        <!--循环把后端传过的datas数据显示到界面上-->
+        {% for website in datas %}
+        <li class="list-group-item">
+            <span class="badge">新</span>
+            {{ website }}
+        </li>
+        {% endfor %}
+
+        <!--循环把后端传过的pre，next数据显示到界面上-->
+        <li class="previous">
+            <a href="/home?typePage=pre&currentPage={{pre}}"><span aria-hidden="true">&larr;</span>上一页</a>
+            <a href="/home?typePage=next&currentPage={{next}}">下一页<span aria-hidden="true">&rarr;</span></a>
+        </li>
+    </ul>
+</div>
+
+
+<!--可视化板块-->
+<div class="jumbotron">
+    <h2>微博热搜数据可视化分析</h2>
+    <p><a href="/echarts" class="btn btn-primary btn-large"> Go可视化页面 &raquo;</a></p>
+
+
+    <!--为echarts准备一个容器，画图就画在里面-->
+    <p><div id="box" style="width: 1000px;height: 400px;"></div></p>
+
+    <script>
+        //初始化ehcharts实例，从dom中获取id的值
+        var myChart = echarts.init(document.getElementById("box"));
+        //指定图表的配置项和数据从后端获取
+        var x = {{ new_title }}
+        var y = {{ new_title_hot }}
+
+        var option = {
+            //标题
+            title: {
+                text: '最新热搜趋势统计'
+            },
+
+            //工具箱
+            //保存图片
+            toolbox: {
+                show: true,
+                feature: {
+                    saveAsImage: {
+                        show: true
+                    }
+                }
+            },
+
+           //坐标轴的位置
+            xAxis: {
+                type: 'category', //画图类型使用折线图
+                data: x,
+                value:y,
+                position: 'bottom',//坐标轴的位置
+                name: "最新的热搜",
+                nameLocation: 'end',
+                nameTextStyle: {
+                    color: '#333333'
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#333333',  //更改坐标轴文字颜色
+                        fontSize: 5      //更改坐标轴文字大小
+                    },
+                    interval: 0,
+                    rotate: 10
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#CCCCCC' //更改坐标轴颜色
+                    }
+                }
+
+            },
+
+            yAxis: {
+                type: 'value',
+                inverse: false, //是否是反向坐标轴
+                name: "热度",
+                nameLocation: 'start',
+                nameTextStyle: {
+                    color: '#333333'
+                },
+                scale: true,//y轴开口向下
+                min: 1,//y轴最小值
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#333333',  //更改坐标轴文字颜色
+                        fontSize: 14      //更改坐标轴文字大小
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#CCCCCC' //更改坐标轴颜色
+                    }
+                }
+            },
+
+            //折线图颜色
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+
+            series: [{
+                data: y,
+                type: 'line',
+            }]
+        };
+
+
+        //使用刚刚指定的配置项和数据项显示图表
+        myChart.setOption(option);    </script>
+
+</div>
+
+
+<!--微博热搜数据情感分析板块-->
+<div class="jumbotron">
+    <h2>微博热搜数据情感分析</h2>
+    <p>
+        <a href="/analysis" class="btn btn-primary btn-large"> Go分析页面 &raquo;</a>
+    </p>
+</div>
+
+
+<!--爬虫板块使用javascript获取启动爬虫板块中的a标签，并请求后端启动爬虫-->
+
+<script>
+    $("#startSpiders").click(function () {
+        $.get("/StartSpiders", function (data) {
+            window.location.href = "/home"
+        });
+    });
+</script>
+
+
+{% endautoescape %}
+{% endblock %}
+

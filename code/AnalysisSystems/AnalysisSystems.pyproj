@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>e185e7f5-29bf-4ce5-8c34-3a8e38cb5eb8</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>AnalysisSystems</Name>
+    <RootNamespace>AnalysisSystems</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.9</InterpreterId>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AnalysisSystems\commond\Config.py" />
+    <Compile Include="AnalysisSystems\commond\MySqlHelper.py" />
+    <Compile Include="AnalysisSystems\commond\Services.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalysisSystems\commond\SnowNLPQingGangFenXi.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalysisSystems\commond\Spiders.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnalysisSystems\commond\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runserver.py" />
+    <Compile Include="AnalysisSystems\__init__.py" />
+    <Compile Include="AnalysisSystems\views.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AnalysisSystems\" />
+    <Folder Include="AnalysisSystems\commond\" />
+    <Folder Include="AnalysisSystems\static\" />
+    <Folder Include="AnalysisSystems\static\content\" />
+    <Folder Include="AnalysisSystems\static\echarts\" />
+    <Folder Include="AnalysisSystems\static\echarts\word\" />
+    <Folder Include="AnalysisSystems\static\echarts\word\dist\" />
+    <Folder Include="AnalysisSystems\static\echarts\word\src\" />
+    <Folder Include="AnalysisSystems\static\fonts\" />
+    <Folder Include="AnalysisSystems\static\scripts\" />
+    <Folder Include="AnalysisSystems\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnalysisSystems\static\content\login.css" />
+    <Content Include="AnalysisSystems\static\content\login.jpeg" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.common.js" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.common.js.map" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.common.min.js" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.esm.js" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.esm.js.map" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.esm.min.js" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.js" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.js.map" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.min.js" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.simple.js" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.simple.js.map" />
+    <Content Include="AnalysisSystems\static\echarts\echarts.simple.min.js" />
+    <Content Include="AnalysisSystems\static\echarts\word\dist\echarts-wordcloud.js" />
+    <Content Include="AnalysisSystems\static\echarts\word\dist\echarts-wordcloud.js.map" />
+    <Content Include="AnalysisSystems\static\echarts\word\dist\echarts-wordcloud.min.js" />
+    <Content Include="AnalysisSystems\static\echarts\word\dist\echarts-wordcloud.min.js.LICENSE.txt" />
+    <Content Include="AnalysisSystems\static\echarts\word\dist\echarts-wordcloud.min.js.map" />
+    <Content Include="AnalysisSystems\static\echarts\word\dist\echartsword.min.js" />
+    <Content Include="AnalysisSystems\static\echarts\word\src\layout.js" />
+    <Content Include="AnalysisSystems\static\echarts\word\src\wordCloud.js" />
+    <Content Include="AnalysisSystems\static\echarts\word\src\WordCloudSeries.js" />
+    <Content Include="AnalysisSystems\static\echarts\word\src\WordCloudView.js" />
+    <Content Include="AnalysisSystems\static\scripts\login.js" />
+    <Content Include="AnalysisSystems\templates\pwdchange.html" />
+    <Content Include="AnalysisSystems\templates\login.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="AnalysisSystems\static\content\bootstrap.css" />
+    <Content Include="AnalysisSystems\static\content\bootstrap.min.css" />
+    <Content Include="AnalysisSystems\static\content\site.css" />
+    <Content Include="AnalysisSystems\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="AnalysisSystems\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AnalysisSystems\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="AnalysisSystems\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="AnalysisSystems\static\scripts\bootstrap.js" />
+    <Content Include="AnalysisSystems\static\scripts\bootstrap.min.js" />
+    <Content Include="AnalysisSystems\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="AnalysisSystems\static\scripts\jquery-1.10.2.js" />
+    <Content Include="AnalysisSystems\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="AnalysisSystems\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="AnalysisSystems\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="AnalysisSystems\static\scripts\jquery.validate.js" />
+    <Content Include="AnalysisSystems\static\scripts\jquery.validate.min.js" />
+    <Content Include="AnalysisSystems\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="AnalysisSystems\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="AnalysisSystems\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="AnalysisSystems\static\scripts\respond.js" />
+    <Content Include="AnalysisSystems\static\scripts\respond.min.js" />
+    <Content Include="AnalysisSystems\static\scripts\_references.js" />
+    <Content Include="AnalysisSystems\templates\analysis.html" />
+    <Content Include="AnalysisSystems\templates\echarts.html" />
+    <Content Include="AnalysisSystems\templates\index.html" />
+    <Content Include="AnalysisSystems\templates\layout.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.10</Version>
+      <Description>env (Python 3.10 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.9" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

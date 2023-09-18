@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+
+
+
+<div style="margin-top:100px"></div>
+
+
+<!--使用html div标签包所有内容包含在一个div中-->
+<div class="jumbotron">
+    <h2>微博热搜数据情感分析</h2>
+
+    <!--按钮-->
+    <p>
+        <a href="/analysis?analysisType=feel" class="btn btn-primary btn-large"> 情感分析 &raquo;</a>
+        <a href="/analysis?analysisType=effect" class="btn btn-primary btn-large"> 影响分析 &raquo;</a>
+        <a href="/analysis?analysisType=feel_super" class="btn btn-primary btn-large"> 舆情分析 &raquo;</a>
+    </p>
+
+    <p>
+        分析结果：
+    </p>
+
+    <!--分析结果-->
+    <p>
+        <div>
+            <!--内容输入框，需要添加一个readonly属性防止用户改写数据 -->
+            <textarea id="content" readonly class="form-control" rows="10">{{messages}}</textarea>
+        </div>
+    </p>
+</div>
+
+
+<div style="margin-top:100px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

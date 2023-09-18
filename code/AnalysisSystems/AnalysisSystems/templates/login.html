@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微博热搜数据可视化分析系统</title>
+
+    <link href="../static/content/login.css" rel="stylesheet" />
+</head>
+
+<body>
+    <script src="../static/scripts/login.js"></script>
+
+
+
+
+    <div class="form">
+        <div class="form-toggle"></div>
+        <div class="form-panel one">
+            <div class="form-header">
+                <h1>微博热搜分析系统登录</h1>
+            </div>
+            <div class="form-content">
+
+                <!--登录核心内容-->
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="username">用户名：</label>
+                        <input type="text"  name="username" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码：</label>
+                        <input type="password" name="pwd" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">登 录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>
